@@ -327,6 +327,16 @@ instantiate (const LV2_Descriptor*     descriptor,
 	fluid_settings_setstr (self->settings, "synth.midi-bank-select", "mma");
 	fluid_settings_setint (self->settings, "synth.audio-channels", 1); // stereo pairs
 
+	/* settings recommened for fluidsynth for GeneralUser GS */
+	fluid_settings_setnum (self->settings, "synth.reverb.damp", 0.3);
+	fluid_settings_setnum (self->settings, "synth.reverb.level", 0.7);
+	fluid_settings_setnum (self->settings, "synth.reverb.room-size", 0.5);
+	fluid_settings_setnum (self->settings, "synth.reverb.width", 0.8);
+	fluid_settings_setnum (self->settings, "synth.chorus.depth", 3.6);
+	fluid_settings_setnum (self->settings, "synth.chorus.level", 0.55);
+	fluid_settings_setnum (self->settings, "synth.chorus.speed", 0.36);
+	fluid_settings_setint (self->settings, "synth.chorus.nr", 4);
+
 	self->synth = new_fluid_synth (self->settings);
 
 	if (!self->synth) {
