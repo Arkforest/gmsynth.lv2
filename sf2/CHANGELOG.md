@@ -2,6 +2,15 @@
 
 ---
 
+## 2.0.2 (2025-04-21)
+
+* Added exclusive class (self-muting) behavior to the following percussion kit sounds:
+  - Hi / Low Whistle
+  - Guiro Short / Long
+  - Cuica Mute / Open
+* Improved programming on **000:060 French Horns**. The lowest part of the instrument range is now a bit brighter,
+	and I have better balanced the use of the filter across the entire key and velocity range.
+
 ## 2.0.1 (2024-10-15)
 
 * Removed the version number and space from the SoundFont filename so users can update the SoundFont without changing filename links that point to it.
