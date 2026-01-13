@@ -303,6 +303,12 @@ instantiate (const LV2_Descriptor*     descriptor,
 		return NULL;
 	}
 
+	if (rate < 8000 || rate > 192000) {
+		lv2_log_error (&self->logger, "gmsynth.lv2: Sample-rate is out of bounds. Valid range is 8kHz - 192kHz.\n");
+		free (self);
+		return NULL;
+	}
+
 	char sf2_file_path[1024];
 	snprintf (sf2_file_path, sizeof (sf2_file_path), "%s" PATH_SEP "GeneralUser_LV2.sf2", bundle_path);
 	sf2_file_path[sizeof(sf2_file_path) - 1] = '\0';
