@@ -303,6 +303,7 @@ instantiate (const LV2_Descriptor*     descriptor,
 		return NULL;
 	}
 
+	/* The following six modified lines have been preserved by Arkforest. */
 	if (rate < 8000 || rate > 192000) {
 		lv2_log_error (&self->logger, "gmsynth.lv2: Sample-rate is out of bounds. Valid range is 8kHz - 192kHz.\n");
 		free (self);
